@@ -1,0 +1,35 @@
+/* =========================
+   Fullscreen Centering & Gradient Background
+========================= */
+body, html {
+  height: 100%;
+  margin: 0px;
+  font-family: "Georgia", serif;
+  background-image: url('public/images/san_gubat.jpeg');
+  background-size: cover;       /* cover the entire viewport */
+  background-position: center;  /* center the image */
+  background-repeat: no-repeat; /* prevent tiling */
+  padding: 0%;
+  
+}
+
+
+/* =========================
+   Buttons (general styles)
+========================= */
+.btn {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,168 @@
+/* Full-screen background wrapper */
+.story-screen-bg {
+  width: 100vw;
+  min-height: 100vh; /* allow menu below */
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  justify-content: center; 
+  align-items: center;
+
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+
+.story-screen-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* dark overlay */
+  z-index: 1;
+}
+
+/* =========================
+   Story Screen Layout
+========================= */
+.story-screen {
+  position: relative;
+  z-index: 2; /* above overlay */
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-align: center;
+  border: 2px solid #a02626;
+  background: rgba(27, 26, 26, 0.8); /* semi-transparent to show background */
+}
+
+/* =========================
+   Player Stats
+========================= */
+.player-stats {
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #0000007e;
+  border: 2px solid #5a2929;
+  font-size: 16px;
+  text-align: left;
+}
+
+
+
+.player-stats .stat-row {
+  display: flex;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.player-stats .stat-label {
+  font-weight: bold;
+  width: 25%; 
+  color: #a02626;
+  
+}
+
+.player-stats .stat-label,
+.player-stats .stat-value {
+  padding: 4px 12px;        /* spacing inside the pill */
+  border-radius: 2px;      /* makes it pill-shaped */
+  display: inline-block;    /* shrink to content width */
+  background: #00000081;
+}
+
+.player-stats .stat-value.hp-dead {
+  color: rgb(139, 18, 18);
+  font-weight: bold;
+}
+
+.player-stats .stat-value.hp-victory {
+  color: rgb(30, 92, 56);
+  font-weight: bold;
+}
+
+.player-stats .stat-value {
+  flex: 1;
+  color: #bba4a4;
+}
+
+
+/* =========================
+   Story Text
+========================= */
+.story-text {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #bba4a4;
+}
+
+/* =========================
+   Choices
+========================= */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-choice {
+  background: #00000091;
+  color: #9c2c2c;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn-choice:hover {
+  background: #8f0b0b81;
+  color: #bba4a4;
+  transition: background 0.2s ease-in-out;
+}
+
+/* =========================
+   Play Again & New Game Buttons
+========================= */
+.btn-play-again,
+.btn-new-game {
+  display: inline-block;
+  margin: 0px 10px;
+  background: #6d2821;
+  color: #bba4a4;
+  padding: 14px 22px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn-play-again:hover,
+.btn-new-game:hover {
+  background: #922b21;
+  
+}
+
+/* =========================
+   Victory State (Green Buttons)
+========================= */
+.story-screen.victory .btn-play-again,
+.story-screen.victory .btn-new-game {
+  background: #1c3a28;
+}
+
+.story-screen.victory .btn-play-again:hover,
+.story-screen.victory .btn-new-game:hover {
+  background: #1e8449;
+}
+

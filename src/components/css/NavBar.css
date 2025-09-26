@@ -1,0 +1,21 @@
+/* ./src/components/NavBar.css */
+
+.navbar {
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #000000c0;
+  display: flex;
+  justify-content: center; /* center the title */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-title {
+  color: rgb(139, 18, 18);
+  font-family: "Georgia", serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+}

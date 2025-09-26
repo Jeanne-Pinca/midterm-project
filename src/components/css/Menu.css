@@ -1,0 +1,35 @@
+/* ./src/components/Menu.css */
+
+.menu-panel {
+  display: flex;
+  justify-content: center;
+  top: 75%; /* distance from the top of the viewport */
+  width: 30%;
+  gap: 16px;
+  margin-top: 50px;
+  padding: 12px;
+  background-color: #00000065;
+  border-radius: 8px;
+  border: 1px solid #420c0c;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 10;
+  position: fixed;
+}
+
+.menu-btn {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #3d1010bb;
+  border: 1px solid #420c0c;
+  color: #883535;
+  transition: background-color 0.2s;
+}
+
+.menu-btn:hover {
+  background-color: #501818;
+  color: #bba4a4;
+
+}
