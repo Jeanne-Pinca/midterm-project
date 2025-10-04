@@ -1,4 +1,5 @@
 // ./src/context/GameContext.jsx
+//avoids prop drilling  
 
 import { createContext, useContext, useState, useEffect } from "react";
 

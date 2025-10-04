@@ -6,7 +6,7 @@
 import useFetch from "../hooks/useFetch";
 import { useGame } from "../context/GameContext";
 import { useEffect, useCallback, useRef } from "react";
-import Menu from "./menu"; 
+import Menu from "./Menu"; 
 import "./css/StoryScreen.css";
 import "./css/Menu.css";
 
@@ -83,7 +83,7 @@ export default function StoryScreen() {
   }, [node, story, setHp, setInventory, visitedNodes, setVisitedNodes]);
 
   // Handle player choices
-  const handleChoice = useCallback(
+  const handleChoice = useCallback( // memoizes the choices , doesnt cause unnecessary re-renders 
     (choice) => {
       // Play hit/choice sound on user click
       if (choice.playSound) {
@@ -97,7 +97,7 @@ export default function StoryScreen() {
         return;
       }
 
-      if (choice.requires) {
+      if (choice.requires) { // removal of the item when required
         setInventory((prev) => {
           const newInv = [...prev];
           const index = newInv.indexOf(choice.requires);
@@ -131,7 +131,7 @@ export default function StoryScreen() {
           alt.to !== choice.to
       );
 
-      if (!choice.requires && hasAltWithRequirement) return false;
+      if (!choice.requires && hasAltWithRequirement) return false; // hideIf logic
       return true;
     });
   }
@@ -157,7 +157,7 @@ export default function StoryScreen() {
             <div className="stat-label">Health</div>
             <div
               className={`stat-value ${
-                isDead ? "hp-dead" : isVictory ? "hp-victory" : "hp-normal"
+                isDead ? "hp-dead" : isVictory ? "hp-victory" : "hp-normal" // if player hp is 0 it displays that the player is dead (red hp in stats)
               }`}
             >
               {hp}
@@ -189,7 +189,7 @@ export default function StoryScreen() {
           </div>
         ) : (
           <div className="choices">
-            {isDead ? (
+            {isDead ? ( // if player is dead it renders the node where the game is over because the player has perished (gameOver_hp)
               <button
                 className="btn-choice btn-dead"
                 onClick={() => setNode("gameOver_hp")}
@@ -197,7 +197,7 @@ export default function StoryScreen() {
                 You have perished, you cannot continue any further.
               </button>
             ) : (
-              visibleChoices.map((choice, idx) => (
+              visibleChoices.map((choice, idx) => ( // this dynamically renders the story.json
                 <button
                   key={idx}
                   className="btn-choice"

@@ -8,7 +8,7 @@ import { GameProvider } from './context/GameContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
-      <GameProvider>
+      <GameProvider> 
         <Routes>
           <Route path="/" element={<App />} />
         </Routes>

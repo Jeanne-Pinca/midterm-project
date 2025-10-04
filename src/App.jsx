@@ -9,7 +9,7 @@ import "./App.css";
 
 export default function App() {
 
-    // Start ambience once for the whole app
+    // Start ambience once for the whole app - playing of music
   useAmbience();
   
   const { playerName } = useGame();
